@@ -1,0 +1,59 @@
+body {
+  font-size: 14px;
+}
+
+.app-container {
+  width: 100%;
+  height: 100%;
+}
+
+nav  {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  height: 50px;
+  margin: 20px 50px;
+  font-size: 30px;
+  border-bottom: 1px solid rgb(211, 209, 209);
+}
+
+nav * { 
+  text-decoration: none;
+  color: black;
+}
+
+.nav-link .nav-link-active {
+  text-decoration: none;
+  color: white;
+}
+
+.table-container {
+  margin: 50px;
+}
+
+.table {
+  width: 100%;
+}
+td {
+  padding: 15px;
+  text-align: left;
+  border: 1px solid #ddd;
+}
+
+th {
+  text-align: center;
+  border-bottom: 1px solid #ddd;
+  background-color: grey;;
+  color: white;
+  font-size: 16px;
+}
+
+td:hover 
+{background-color: rgb(211, 209, 209);
+}
+
+tr:nth-child {
+  background-color: #f2f2f2;}
+
+
