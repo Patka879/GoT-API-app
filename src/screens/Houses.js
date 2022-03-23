@@ -37,12 +37,12 @@ export default function Houses({columns, data}) {
 
     return(
         <div className="table-container">
-             <button
+            <button
                 onClick={() => {
                     setPageNumber(1)
                 }}
                 className="button"
-            >First
+            >❮❮ First
             </button>
             <button 
                 onClick={() => {
@@ -50,7 +50,7 @@ export default function Houses({columns, data}) {
                     setPageNumber(pageNumber - 1)
                 }} 
                 className="button"
-            >Prev</button>
+            >❮ Prev</button>
             <span>{pageNumber}</span>
             <button 
                 onClick={() => {
@@ -58,15 +58,15 @@ export default function Houses({columns, data}) {
                     setPageNumber(pageNumber + 1)
                 }} 
                 className="button"
-            >Next</button>
+            >Next ❯</button>
             <button
                 onClick={() => {
-                    setPageNumber(18)
+                    setPageNumber(86)
                 }}
                 className="button"
-            >Last
+            >Last ❯❯
             </button>
-            <Table>
+            <Table className="table">
                 <thead>
                     <tr>
                         <th>Name of the house</th>

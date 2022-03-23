@@ -26,8 +26,8 @@ export default function HouseDetails () {
     }
 
     return(
-        <div>
-            <Table>
+        <div className="table-container">
+            <Table className="table">
                 <thead>
                     <tr>
                         <th>Name of the house</th>

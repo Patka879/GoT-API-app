@@ -2,7 +2,6 @@ import { useEffect, useState } from "react"
 import {Table} from "react-bootstrap"
 import {Link} from "react-router-dom"
 
-
 export function checkAliveStatus(character) {
     if (!character.born && !character.died) {
         return "Unknown"
@@ -61,6 +60,7 @@ export default function Characters() {
             })
     }, [{pageNumber}])
 
+      
 
     return (
         <div className="table-container">
@@ -69,7 +69,7 @@ export default function Characters() {
                     setPageNumber(1)
                 }}
                 className="button"
-            >First
+            >❮❮ First
             </button>
             <button 
                 onClick={() => {
@@ -77,7 +77,7 @@ export default function Characters() {
                     setPageNumber(pageNumber - 1)
                 }} 
                 className="button"
-            >Prev</button>
+            >❮ Prev</button>
             <span>{pageNumber}</span>
             <button 
                 onClick={() => {
@@ -85,13 +85,13 @@ export default function Characters() {
                     setPageNumber(pageNumber + 1)
                 }} 
                 className="button"
-            >Next</button>
+            >Next ❯</button>
             <button
                 onClick={() => {
                     setPageNumber(86)
                 }}
                 className="button"
-            >Last
+            >Last ❯❯
             </button>
             <Table className="table">
                 <thead>

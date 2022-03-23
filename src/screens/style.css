@@ -30,24 +30,32 @@ nav * {
   color: white;
 }
 
+.nav-link-active {
+  border-top: 1px solid #3E3C3C;
+}
+
 .table-container {
   margin: 50px;
 }
 
 .button {
   margin: 10px;
-  border-radius: 5px;
+  border: none;
+  background-color: #ddd;
+  height: 26px;
+  text-transform: uppercase;
+  padding: 0 10px;;
+  font-weight: bold;
 }
 
 .button:hover {
   cursor: pointer
 }
 
-.table * {
+.table {
   width: 100%;
   text-decoration: none;
 }
-
 
 td {
   padding: 15px;
@@ -56,7 +64,6 @@ td {
 }
 
 th {
-  text-align: center;
   border-bottom: 1px solid #ddd;
   background-color: grey;;
   color: white;
@@ -65,8 +72,8 @@ th {
   height: 36px;
 }
 
-td:hover 
-{background-color: rgb(211, 209, 209);
+td:hover {
+  background-color: rgb(211, 209, 209);
 }
 
 
