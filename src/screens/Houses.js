@@ -1,54 +1,71 @@
 import { useEffect, useState } from "react"
 import {Table} from "react-bootstrap"
-import { useTable, usePagination } from "react-table"
+
+
+export function checkIfDiedOut(houseList) {
+    if (!houseList.diedOut) {
+        return "Yes"
+    } else {
+        return "No"
+    }
+}
+
+export function checkIfHasOverlord(houseList) {
+    if (!houseList.overlord) {
+        return "No"
+    } else {
+        return "Yes"
+    }
+}
 
 export default function Houses({columns, data}) {
 
-    // const {
-    //     getTableProps,
-    //     getTableBodyProps,
-    //     headerGroups,
-    //     footerGroups,
-    //     page,
-    //     prepareRow,
-    //   } = useTable(
-    //     {
-    //       columns,
-    //       data,
-    //     },
-    //     usePagination
-    //   )
 
     const [houseList, setHouseList] = useState([])
+    const [pageNumber, setPageNumber] = useState(1)
 
-    function checkIfDiedOut(houseList) {
-        if (!houseList.diedOut) {
-            return "Yes"
-        } else {
-            return "No"
-        }
-    }
-
-    function checkIfHasOverlord(houseList) {
-        if (!houseList.overlord) {
-            return "No"
-        } else {
-            return "Yes"
-        }
-    }
 
     useEffect(() => {
-        fetch("https://anapioficeandfire.com/api/houses")
+        fetch(`https://anapioficeandfire.com/api/houses?pageSize=25&page=${pageNumber}`)
             .then(response => {
                 return Promise.resolve(response.json())
             })
             .then(jsonResponse => {
                 setHouseList(jsonResponse) 
             })
-        }, [])
+        }, [{pageNumber}])
 
     return(
         <div className="table-container">
+             <button
+                onClick={() => {
+                    setPageNumber(1)
+                }}
+                className="button"
+            >First
+            </button>
+            <button 
+                onClick={() => {
+                    if (pageNumber === 1) return
+                    setPageNumber(pageNumber - 1)
+                }} 
+                className="button"
+            >Prev</button>
+            <span>{pageNumber}</span>
+            <button 
+                onClick={() => {
+                    if (houseList.length < 25) return
+                    setPageNumber(pageNumber + 1)
+                }} 
+                className="button"
+            >Next</button>
+            <button
+                onClick={() => {
+                    setPageNumber(18)
+                }}
+                className="button"
+            >Last
+            </button>
             <Table>
                 <thead>
                     <tr>
@@ -72,8 +89,8 @@ export default function Houses({columns, data}) {
                             <td>{house.words}</td>
                             <td>{house.titles}</td> 
                             <td>{house.seats}</td>
-                            <td>{checkIfDiedOut}</td>
-                            <td>{checkIfHasOverlord}</td>
+                            <td>{checkIfDiedOut(house)}</td>
+                            <td>{checkIfHasOverlord(house)}</td>
                             <td>{house.cadetBranches.length}</td>
                         </tr>
                     </tbody>
