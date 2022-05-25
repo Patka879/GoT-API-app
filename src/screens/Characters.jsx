@@ -58,7 +58,7 @@ export default function Characters() {
             .then(jsonResponse => {
                 setCharactersList(jsonResponse) 
             })
-    }, [{pageNumber}])
+    }, [pageNumber])
 
       
 

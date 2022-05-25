@@ -19,7 +19,7 @@ export default function HouseDetails () {
             .then(jsonResponse => {
                 setHouseDetails(jsonResponse) 
             })
-    }, [])
+    }, [id])
 
     if(!houseDetails) {
         return <span>No details available about house {id}</span>

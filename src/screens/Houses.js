@@ -33,7 +33,7 @@ export default function Houses({columns, data}) {
             .then(jsonResponse => {
                 setHouseList(jsonResponse) 
             })
-        }, [{pageNumber}])
+        }, [pageNumber])
 
     return(
         <div className="table-container">
