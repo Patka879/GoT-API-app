@@ -44,7 +44,7 @@ export default function Characters() {
             return character.allegiances
                 .map(link => {
                     const id = link.replaceAll(/[^0-9]/g, "")
-                    return <Link to={`/houses/${id}`}>{id}</Link>
+                    return <Link key={link.id} to={`/houses/${id}`}>{id}</Link>
                 })
         }
     }

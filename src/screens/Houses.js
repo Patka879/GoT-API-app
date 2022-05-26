@@ -81,7 +81,7 @@ export default function Houses({columns, data}) {
                     </tr>
                 </thead>
                 {houseList.map(house => (
-                    <tbody>
+                    <tbody key={house.name}>
                         <tr>
                             <td>{house.name}</td>
                             <td>{house.region}</td>
