@@ -51,7 +51,7 @@ export default function Characters() {
 
 
     useEffect(() => {
-        fetch(`https://anapioficeandfire.com/api/characters?pageSize=25&page=${pageNumber}`)
+        fetch(`/api/characters?pageSize=25&page=${pageNumber}`)
             .then(response => {
                 return Promise.resolve(response.json())
             })

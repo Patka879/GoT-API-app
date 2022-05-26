@@ -26,7 +26,7 @@ export default function Houses({columns, data}) {
 
 
     useEffect(() => {
-        fetch(`https://anapioficeandfire.com/api/houses?pageSize=25&page=${pageNumber}`)
+        fetch(`/api/houses?pageSize=25&page=${pageNumber}`)
             .then(response => {
                 return Promise.resolve(response.json())
             })

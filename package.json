@@ -2,6 +2,7 @@
   "name": "got-api-app",
   "version": "0.1.0",
   "homepage": "/got-api-app",
+  "proxy": "https://anapioficeandfire.com/api/",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.2",

@@ -12,7 +12,7 @@ export default function HouseDetails () {
     const [houseDetails, setHouseDetails] = useState(undefined)
 
     useEffect(() => {
-        fetch(`https://anapioficeandfire.com/api/houses/${id}`)
+        fetch(`/api/houses/${id}`)
             .then(response => {
                 return Promise.resolve(response.json())
             })
