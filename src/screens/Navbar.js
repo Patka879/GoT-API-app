@@ -7,12 +7,12 @@ export default function Navbar() {
     return(
         <nav>
             <NavLink 
-                to="characters"
+                to="/characters"
                 className={generateLinkClass}
                 >Characters 
             </NavLink>
             <NavLink 
-                to="houses"
+                to="/houses"
                 className={generateLinkClass}
                 >Houses 
             </NavLink>
